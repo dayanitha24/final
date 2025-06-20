@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact Us - Asia Cotton</title>
   <link href="https://fonts.googleapis.com/css2?family=Prata&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous">
   <style>
     :root {
       --primary: #44535e;
@@ -23,7 +23,7 @@
       --background: #f4f4f2;
       --space-sm: 1rem;
       --space-md: 1.5rem;
-      --highlight: #3b444c; /* Added highlight color */
+      --highlight: #3b444c;
     }
 
     * {
@@ -37,15 +37,13 @@
       color: var(--primary);
       font-family: Arial, sans-serif;
       min-height: 100vh;
-      display: flex;
-      flex-direction: column;
     }
 
     .font-heading {
       font-family: 'Prata', serif;
     }
 
-    /* Navigation from About Us page - Fixed underline issue */
+    /* Navigation - Original style */
     nav {
       display: flex;
       justify-content: space-between;
@@ -87,13 +85,7 @@
       bottom: 0;
       left: 0;
       background-color: var(--highlight);
-      transform: scaleX(1); /* Ensure underline stays visible */
-      animation: underline 0.3s ease forwards;
-    }
-
-    @keyframes underline {
-      from { transform: scaleX(0); }
-      to { transform: scaleX(1); }
+      transform: scaleX(1);
     }
 
     .logo {
@@ -102,180 +94,112 @@
       margin-right: 2rem;
     }
 
-    /* Rest of your existing styles... */
-    .container {
+    /* Contact Content */
+    .contact-container {
       max-width: 1200px;
-      margin: 3rem auto;
-      padding: 0 2rem;
-      flex-grow: 1;
-      display: flex;
-      align-items: center;
+      margin: 0 auto;
+      padding: 2rem;
     }
 
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-      width: 100%;
+    .contact-header {
+      margin-bottom: 2rem; /* Reduced margin */
+      text-align: center;
     }
 
-    h1 {
+    .contact-header h1 {
       font-size: 2.8rem;
-      margin-bottom: 1rem;
+      color: var(--textile-dark);
+      margin-bottom: 0.75rem; /* Reduced margin */
     }
 
     .heading-underline {
       width: 50px;
       height: 3px;
       background: var(--textile-medium);
-      margin-bottom: 2rem;
+      margin: 0 auto 1.5rem; /* Reduced margin */
     }
 
-    .intro-text {
-      font-size: 1.1rem;
-      line-height: 1.8;
-      color: var(--textile-medium);
-      max-width: 500px;
-      margin-bottom: 2rem;
+    .contact-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem; /* Reduced gap */
+      align-items: start;
     }
 
     .contact-cards {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-      max-width: 500px;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem; /* Reduced gap */
+      padding: 0.5rem; /* Added slight padding */
+    }
+
+    .contact-row {
+      display: flex;
+      gap: 1rem; /* Reduced gap */
     }
 
     .contact-card {
       background: linear-gradient(145deg, #ffffff 0%, #f5f5f3 100%);
-      padding: 1.5rem;
-      border-radius: 12px;
-      box-shadow: 8px 8px 16px #d9d9d7, -8px -8px 16px #ffffff;
+      padding: 1.25rem; /* Reduced padding */
+      border-radius: 10px; /* Slightly reduced */
+      box-shadow: 4px 4px 12px #d9d9d7, -4px -4px 12px #ffffff; /* Reduced shadow */
       transition: all 0.3s ease;
+      text-align: center;
+      flex: 1;
     }
 
     .contact-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 12px 12px 24px #d9d9d7, -12px -12px 24px #ffffff;
+      transform: translateY(-3px); /* Reduced hover effect */
+      box-shadow: 6px 6px 16px #d9d9d7, -6px -6px 16px #ffffff; /* Reduced shadow */
     }
 
     .icon-circle {
-      width: 48px;
-      height: 48px;
+      width: 42px; /* Reduced size */
+      height: 42px; /* Reduced size */
       display: flex;
       align-items: center;
       justify-content: center;
       border-radius: 50%;
       background-color: var(--textile-light);
-      box-shadow: 4px 4px 8px #d9d9d7, -4px -4px 8px #ffffff;
-      margin: 0 auto 1rem;
+      box-shadow: 3px 3px 6px #d9d9d7, -3px -3px 6px #ffffff; /* Reduced shadow */
+      margin: 0 auto 0.75rem; /* Reduced margin */
     }
 
     .contact-card h3 {
-      font-size: 1.1rem;
+      font-size: 1rem; /* Slightly reduced */
       font-weight: 600;
-      margin-bottom: 0.5rem;
-      text-align: center;
+      margin-bottom: 0.4rem; /* Reduced margin */
       color: var(--textile-dark);
     }
 
     .contact-card p {
-      font-size: 0.95rem;
+      font-size: 0.9rem; /* Slightly reduced */
       color: var(--textile-medium);
-      text-align: center;
+      line-height: 1.5;
     }
 
-    .contact-details {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
+    .map-container {
+      height: 100%;
+      min-height: 380px; /* Slightly reduced */
+      border-radius: 10px; /* Slightly reduced */
+      overflow: hidden;
+      box-shadow: 6px 6px 16px #d9d9d7, -6px -6px 16px #ffffff; /* Reduced shadow */
     }
 
-    .business-hours {
-      grid-column: span 2;
+    .map-container iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
     }
 
-    .contact-details h3 {
-      font-size: 1.3rem;
-      font-family: 'Prata', serif;
-      margin-bottom: 1rem;
-      color: var(--textile-dark);
-    }
-
-    .business-hours p {
-      display: flex;
-      justify-content: space-between;
-      padding: 0.5rem 0;
-      border-bottom: 1px solid var(--textile-light);
-      color: var(--textile-medium);
-    }
-
-    .business-hours p span:last-child {
-      font-weight: 600;
-      color: var(--textile-dark);
-    }
-
-    .founded p {
-      font-size: 1.7rem;
-      font-weight: 300;
-      color: var(--textile-medium);
-    }
-
-    footer {
-      background-color: var(--primary);
-      color: white;
-      text-align: center;
-      padding: 1rem;
-      font-size: 0.95rem;
-    }
-
-    .footer-content {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .social-icons {
-      display: flex;
-      gap: 1rem;
-      margin-top: 0.5rem;
-    }
-
-    .social-icons a {
-      color: var(--textile-gray);
-      transition: color 0.3s ease;
-    }
-
-    .social-icons a:hover {
-      color: var(--hover-gray);
-    }
-
+    /* Responsive */
     @media (max-width: 1024px) {
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
-      
-      .contact-details {
-        margin-top: 2rem;
+      .contact-content {
+        gap: 1.5rem;
       }
     }
 
     @media (max-width: 768px) {
-      h1 {
-        font-size: 2.2rem !important;
-      }
-      
-      .contact-cards,
-      .contact-details {
-        grid-template-columns: 1fr;
-      }
-      
-      .business-hours {
-        grid-column: span 1;
-      }
-      
       nav {
         flex-direction: column;
         align-items: center;
@@ -292,13 +216,21 @@
         margin-right: 0;
         margin-bottom: 1rem;
       }
+      
+      .contact-content {
+        grid-template-columns: 1fr;
+      }
+      
+      .contact-header h1 {
+        font-size: 2.2rem;
+      }
+      
+      .contact-row {
+        flex-direction: column;
+      }
     }
 
     @media (max-width: 480px) {
-      .contact-card {
-        padding: 1.25rem !important;
-      }
-      
       nav {
         padding: 1rem;
       }
@@ -310,6 +242,14 @@
       nav a {
         padding: 0.5rem;
         font-size: 0.9rem;
+      }
+      
+      .contact-container {
+        padding: 1.5rem;
+      }
+      
+      .contact-card {
+        padding: 1rem;
       }
     }
   </style>
@@ -324,73 +264,50 @@
       <a href="products.html">Products</a>
       <a href="certifications.html">Certifications</a>
       <a href="sustainability.html">Sustainability</a>
-      <a href="index.html" class="active">Contact Us</a>
+      <a href="contact.html" class="active">Contact Us</a>
     </div>
   </nav>
 
-  <div class="container">
-    <div class="contact-grid">
-      <!-- Left Side - Contact Info -->
-      <div>
-        <h1 class="font-heading">Get in Touch</h1>
-        <div class="heading-underline"></div>
-        
-        <div class="intro-text">
-          Since 1997, we've been crafting premium textiles from our base in Karur, South India. Reach out to discuss how we can elevate your home with our collections.
-        </div>
-        
-        <div class="contact-cards">
+  <div class="contact-container">
+    <div class="contact-header">
+      <h1 class="font-heading">Get in Touch</h1>
+      <div class="heading-underline"></div>
+    </div>
+
+    <div class="contact-content">
+      <div class="contact-cards">
+        <div class="contact-row">
           <div class="contact-card">
             <div class="icon-circle">
               <i class="fas fa-phone"></i>
             </div>
             <h3>Call Us</h3>
-            <p>+91 4324 123456</p>
+            <p>+91 4324-235518</p>
           </div>
-          
+
           <div class="contact-card">
             <div class="icon-circle">
               <i class="fas fa-envelope"></i>
             </div>
             <h3>Email Us</h3>
-            <p>info@asiacotton.com</p>
+            <p>Info@asiacotton.in</p>
           </div>
         </div>
-      </div>
-      
-      <!-- Right Side - Details -->
-      <div class="contact-details">
+
         <div class="contact-card">
-          <h3>Location</h3>
+          <div class="icon-circle">
+            <i class="fas fa-map-marker-alt"></i>
+          </div>
+          <h3>Our Location</h3>
           <p>Karur, South India</p>
-          <p style="font-size: 0.85rem; color: var(--textile-gray);">Textile Excellence Region</p>
         </div>
-        
-        <div class="contact-card">
-          <h3>Founded</h3>
-          <p class="founded">1997</p>
-        </div>
-        
-        <div class="contact-card business-hours">
-          <h3>Business Hours</h3>
-          <p><span>Monday - Friday</span><span>9:00 AM - 6:00 PM</span></p>
-          <p><span>Saturday</span><span>9:00 AM - 2:00 PM</span></p>
-          <p><span>Sunday</span><span>Closed</span></p>
-        </div>
+      </div>
+
+      <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.319347355352!2d78.07972231526031!3d10.78683789231493!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3baab89cea453039%3A0x1ba02b919a3c3df5!2sKarur%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1623844768473!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>
       </div>
     </div>
   </div>
-
-  <footer>
-    <div class="footer-content">
-      © 2025 Asia Cotton. All rights reserved.
-      <div class="social-icons">
-        <a href="#"><i class="fas fa-globe"></i></a>
-        <a href="#"><i class="fab fa-facebook-f"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
-      </div>
-    </div>
-  </footer>
 
 </body>
 </html>
