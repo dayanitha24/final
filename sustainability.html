@@ -10,8 +10,8 @@
     :root {
       --primary: #44535e;
       --white: #ffffff;
-      --nav-bg: #f4f4f2; /* Changed to match sustainability body background */
-      --nav-link: #2d3946; /* Dark text color from about page */
+      --nav-bg: #f4f4f2;
+      --nav-link: #2d3946;
       --nav-active-bg: rgba(255,255,255,0.15);
       --background: #f4f4f2;
       --black: #000000;
@@ -28,7 +28,7 @@
       --accent: #3a4346;
       --text: #3b444b;
       --light-text: #7e8a91;
-      --highlight: #3b444c; /* Added from about page */
+      --highlight: #3b444c;
     }
 
     * {
@@ -55,7 +55,7 @@
       align-items: center;
       flex-wrap: wrap;
       padding: 1rem 2rem;
-      background-color: var(--nav-bg); /* Using sustainability body color */
+      background-color: var(--nav-bg);
       position: sticky;
       top: 0;
       z-index: 100;
@@ -68,7 +68,7 @@
     }
 
     nav a {
-      color: var(--nav-link); /* Dark text color from about page */
+      color: var(--nav-link);
       text-decoration: none;
       font-weight: 600;
       font-size: 1.1rem;
@@ -178,156 +178,6 @@
       }
       to {
         opacity: 1;
-      }
-    }
-
-    /* Horizontal Timeline Section */
-    .timeline-section {
-      padding: 4rem 0;
-      overflow-x: auto;
-    }
-    
-    .timeline-header {
-      text-align: center;
-      margin-bottom: 3rem;
-    }
-    
-    .horizontal-timeline {
-      display: flex;
-      min-width: 800px; /* Minimum width to prevent squeezing */
-      position: relative;
-      padding-bottom: 60px;
-    }
-    
-    .timeline-progress {
-      position: absolute;
-      top: 60px;
-      left: 0;
-      right: 0;
-      height: 4px;
-      background: #e0e0e0;
-      z-index: 1;
-    }
-    
-    .timeline-progress-bar {
-      height: 100%;
-      background: var(--accent);
-      width: 25%;
-      transition: width 0.5s ease;
-    }
-    
-    .timeline-items-container {
-      display: flex;
-      justify-content: space-between;
-      width: 100%;
-      position: relative;
-      z-index: 2;
-    }
-    
-    .timeline-item {
-      flex: 1;
-      max-width: 250px;
-      position: relative;
-      padding-top: 80px;
-      text-align: center;
-    }
-    
-    .timeline-item:before {
-      content: '';
-      position: absolute;
-      top: 50px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      background: var(--card-bg);
-      border: 4px solid var(--accent);
-      z-index: 3;
-      transition: all 0.3s ease;
-    }
-    
-    .timeline-item.active:before {
-      background: var(--accent);
-    }
-    
-    .timeline-item:first-child {
-      text-align: left;
-      align-items: flex-start;
-    }
-    
-    .timeline-item:last-child {
-      text-align: right;
-      align-items: flex-end;
-    }
-    
-    .timeline-year {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      font-weight: bold;
-      color: var(--accent);
-      font-size: 1.2rem;
-    }
-    
-    .timeline-content {
-      background: var(--card-bg);
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 5px 15px var(--shadow);
-      margin: 0 10px;
-      transition: all 0.3s ease;
-      min-height: 220px;
-    }
-    
-    .timeline-item:hover .timeline-content {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-    }
-    
-    .timeline-title {
-      font-size: 1.1rem;
-      color: var(--primary);
-      margin-bottom: 1rem;
-      font-weight: 600;
-    }
-    
-    .timeline-items {
-      list-style-type: none;
-      text-align: left;
-      padding-left: 0;
-    }
-    
-    .timeline-items li {
-      margin-bottom: 0.6rem;
-      position: relative;
-      padding-left: 1.2rem;
-      font-size: 0.9rem;
-      color: var(--text);
-    }
-    
-    .timeline-items li::before {
-      content: "•";
-      position: absolute;
-      left: 0;
-      color: var(--accent);
-      font-weight: bold;
-    }
-
-    /* Responsive timeline */
-    @media (max-width: 768px) {
-      .horizontal-timeline {
-        min-width: 600px;
-      }
-      
-      .timeline-item {
-        max-width: 180px;
-      }
-      
-      .timeline-content {
-        padding: 15px;
-        min-height: 250px;
       }
     }
 
@@ -472,7 +322,7 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 2rem;
-      margin: 4rem 0;
+      margin: 3rem 0 1.5rem 0; /* Reduced bottom margin */
       text-align: center;
     }
 
@@ -507,6 +357,143 @@
 
     .stat:hover .stat-label {
       color: var(--primary);
+    }
+
+    /* Horizontal Timeline Section */
+    .timeline-section {
+      padding: 1rem 0 2rem 0; /* Reduced top padding */
+      overflow-x: auto;
+      margin-top: 0; /* Removed extra margin */
+    }
+    
+    .timeline-header {
+      text-align: center;
+      margin-bottom: 1rem; /* Reduced from 2rem */
+    }
+    
+    .horizontal-timeline {
+      display: flex;
+      min-width: 800px;
+      position: relative;
+      padding-bottom: 30px; /* Reduced from 60px */
+    }
+    
+    .timeline-progress {
+      position: absolute;
+      top: 45px; /* Adjusted from 60px */
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: #e0e0e0;
+      z-index: 1;
+    }
+    
+    .timeline-progress-bar {
+      height: 100%;
+      background: var(--accent);
+      width: 25%;
+      transition: width 0.5s ease;
+    }
+    
+    .timeline-items-container {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      position: relative;
+      z-index: 2;
+      gap: 0.5rem; /* Reduced from 1rem */
+    }
+    
+    .timeline-item {
+      flex: 1;
+      max-width: 250px;
+      position: relative;
+      padding-top: 60px; /* Reduced from 80px */
+      text-align: center;
+    }
+    
+    .timeline-item:before {
+      content: '';
+      position: absolute;
+      top: 35px; /* Adjusted from 50px */
+      left: 50%;
+      transform: translateX(-50%);
+      width: 16px; /* Reduced from 20px */
+      height: 16px; /* Reduced from 20px */
+      border-radius: 50%;
+      background: var(--card-bg);
+      border: 3px solid var(--accent); /* Reduced from 4px */
+      z-index: 3;
+      transition: all 0.3s ease;
+    }
+    
+    .timeline-item.active:before {
+      background: var(--accent);
+    }
+    
+    .timeline-item:first-child {
+      text-align: left;
+      align-items: flex-start;
+    }
+    
+    .timeline-item:last-child {
+      text-align: right;
+      align-items: flex-end;
+    }
+    
+    .timeline-year {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      font-weight: bold;
+      color: var(--accent);
+      font-size: 1.2rem;
+    }
+    
+    .timeline-content {
+      background: var(--card-bg);
+      padding: 15px; /* Reduced from 20px */
+      border-radius: 8px;
+      box-shadow: 0 5px 15px var(--shadow);
+      margin: 0 5px; /* Reduced from 10px */
+      transition: all 0.3s ease;
+      min-height: 200px; /* Reduced from 220px */
+    }
+    
+    .timeline-item:hover .timeline-content {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    }
+    
+    .timeline-title {
+      font-size: 1.1rem;
+      color: var(--primary);
+      margin-bottom: 0.8rem; /* Reduced from 1rem */
+      font-weight: 600;
+    }
+    
+    .timeline-items {
+      list-style-type: none;
+      text-align: left;
+      padding-left: 0;
+    }
+    
+    .timeline-items li {
+      margin-bottom: 0.5rem; /* Reduced from 0.6rem */
+      position: relative;
+      padding-left: 1.2rem;
+      font-size: 0.9rem;
+      color: var(--text);
+      line-height: 1.4; /* Added for better spacing */
+    }
+    
+    .timeline-items li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: bold;
     }
 
     footer {
@@ -565,7 +552,6 @@
         grid-template-columns: 1fr 1fr;
       }
 
-      /* Responsive nav */
       nav {
         flex-direction: column;
         align-items: center;
@@ -581,6 +567,19 @@
       .logo {
         margin-right: 0;
         margin-bottom: 1rem;
+      }
+
+      .horizontal-timeline {
+        min-width: 600px;
+      }
+      
+      .timeline-item {
+        max-width: 180px;
+      }
+      
+      .timeline-content {
+        padding: 12px;
+        min-height: 220px;
       }
     }
 
@@ -605,6 +604,20 @@
         padding: 0.5rem;
         font-size: 0.9rem;
       }
+
+      .horizontal-timeline {
+        min-width: 100%;
+        padding-bottom: 20px;
+      }
+
+      .timeline-item {
+        max-width: 150px;
+        padding-top: 50px;
+      }
+
+      .timeline-content {
+        min-height: 240px;
+      }
     }
   </style>
 </head>
@@ -628,8 +641,7 @@
       <h1 class="font-heading">Sustainable Textile Excellence</h1>
       <div class="heading-underline"></div>
       <p class="intro">
-        Since 1997, Asia Cotton has pioneered sustainable textile manufacturing in Karur, South India. 
-        Our commitment to environmental stewardship and ethical practices defines every aspect of production.
+        At Asia Cotton, sustainability is more than a responsibility; it is a promise. Every time you choose Asia Cotton, you choose comfort with a conscience, bringing sustainable beauty to your home and dignity to the hands that create it.
       </p>
     </div>
 
@@ -692,6 +704,7 @@
         </ul>
       </div>
     </div>
+
     <!-- Stats Section -->
     <div class="stats">
       <div class="stat">
@@ -713,102 +726,80 @@
     </div>
 
     <!-- Horizontal Timeline Section -->
-    <div class="timeline-section">
-      <div class="timeline-header">
-        <h2 class="font-heading">Our Sustainability Roadmap</h2>
-        <div class="heading-underline" style="margin: 1rem auto;"></div>
+<div class="timeline-section">
+  <div class="timeline-header">
+    <h2 class="font-heading">Our Sustainability Goals</h2>
+    <div class="heading-underline" style="margin: 0.5rem auto;"></div>
+    <p style="text-align: center; max-width: 800px; margin: 0 auto 0.5rem; font-size: 1.1rem; color: var(--text); line-height: 1.5;">
+      At Asia Cotton, we're setting bold goals to create lasting change. We believe in transparency and are committed to sharing our progress.
+    </p>
+  </div>
+  
+  <div class="horizontal-timeline">
+    <div class="timeline-progress">
+      <div class="timeline-progress-bar"></div>
+    </div>
+    
+    <div class="timeline-items-container">
+      <!-- 2027 -->
+      <div class="timeline-item active">
+        <div class="timeline-year">2027</div>
+        <div class="timeline-content">
+          <h3 class="timeline-title">Material Transformation</h3>
+          <ul class="timeline-items">
+            <li>100% organic or recycled material usage</li>
+            <li>Complete phase-out of conventional cotton</li>
+            <li>Supply chain transparency initiative</li>
+          </ul>
+        </div>
       </div>
       
-      <div class="horizontal-timeline">
-        <div class="timeline-progress">
-          <div class="timeline-progress-bar"></div>
-        </div>
-        
-        <div class="timeline-items-container">
-          <!-- 2023-2024 -->
-          <div class="timeline-item active">
-            <div class="timeline-year">2023-2024</div>
-            <div class="timeline-content">
-              <h3 class="timeline-title">Foundation Phase</h3>
-              <ul class="timeline-items">
-                <li>50% solar power adoption</li>
-                <li>Closed-loop water system</li>
-                <li>Sustainable farming training</li>
-              </ul>
-            </div>
-          </div>
-          
-          <!-- 2025-2026 -->
-          <div class="timeline-item">
-            <div class="timeline-year">2025-2026</div>
-            <div class="timeline-content">
-              <h3 class="timeline-title">Transformation Phase</h3>
-              <ul class="timeline-items">
-                <li>100% organic cotton</li>
-                <li>40% carbon reduction</li>
-                <li>Biodegradable packaging</li>
-              </ul>
-            </div>
-          </div>
-          
-          <!-- 2027-2028 -->
-          <div class="timeline-item">
-            <div class="timeline-year">2027-2028</div>
-            <div class="timeline-content">
-              <h3 class="timeline-title">Innovation Phase</h3>
-              <ul class="timeline-items">
-                <li>100% renewable energy</li>
-                <li>Zero waste to landfill</li>
-                <li>Full material traceability</li>
-              </ul>
-            </div>
-          </div>
-          
-          <!-- 2030+ -->
-          <div class="timeline-item">
-            <div class="timeline-year">2030+</div>
-            <div class="timeline-content">
-              <h3 class="timeline-title">Leadership Phase</h3>
-              <ul class="timeline-items">
-                <li>Carbon positive operations</li>
-                <li>Circular production model</li>
-                <li>Industry leadership</li>
-              </ul>
-            </div>
-          </div>
+      <!-- 2028 -->
+      <div class="timeline-item">
+        <div class="timeline-year">2028</div>
+        <div class="timeline-content">
+          <h3 class="timeline-title">Energy Revolution</h3>
+          <ul class="timeline-items">
+            <li>Solar-powered production across all units</li>
+            <li>75% reduction in carbon emissions</li>
+            <li>Energy efficiency optimization</li>
+          </ul>
         </div>
       </div>
+      
+      <!-- 2030 -->
+ 
+    <div class="timeline-item">
+      <div class="timeline-year">2030</div>
+      <div class="timeline-content">
+        <h3 class="timeline-title" style="text-align: center;">Circular Excellence</h3>
+        <ul class="timeline-items">
+          <li>Achieving near-zero fabric waste</li>
+          <li>Closed-loop production systems</li>
+          <li>Product lifecycle extension programs</li>
+        </ul>
+      </div>
     </div>
-  </div>
+    </div>
+    </div>
+</div>
 
-  <footer>
-    © 2025 Asia Cotton. All rights reserved.
-    <div class="social-links">
-      <a href="#"><i class="fab fa-linkedin-in"></i></a>
-      <a href="#"><i class="fab fa-facebook-f"></i></a>
-      <a href="#"><i class="fab fa-instagram"></i></a>
-      <a href="#"><i class="fab fa-youtube"></i></a>
-    </div>
-  </footer>
+ 
 
   <script>
-    // Simple script to highlight the current timeline item on scroll
     document.addEventListener('DOMContentLoaded', function() {
       const timelineItems = document.querySelectorAll('.timeline-item');
       const progressBar = document.querySelector('.timeline-progress-bar');
       
-      // For demo purposes, we'll just highlight the first item
-      // In a real implementation, you'd use IntersectionObserver to track scroll position
       timelineItems.forEach((item, index) => {
         if (index === 0) {
           item.classList.add('active');
         }
         
-        // Click handler for demo
         item.addEventListener('click', () => {
           timelineItems.forEach(i => i.classList.remove('active'));
           item.classList.add('active');
-          progressBar.style.width = `${(index + 1) * 25}%`;
+          progressBar.style.width = `${(index + 1) * 33.33}%`;
         });
       });
     });
